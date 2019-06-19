@@ -1,0 +1,9 @@
+def area_code(text):
+    string = text
+    start = string.find('(')
+    end = string.find(')')
+    output = string[start:end]
+    return output
+    
+    I'm getting a return:
+    '(555' should equal '555'
