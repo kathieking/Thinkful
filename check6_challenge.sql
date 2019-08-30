@@ -10,7 +10,7 @@ WITH
 SELECT
 	t.trip_id,
 	t.start_date,
-	t.duration
+	MAX(t.duration) as longest
 FROM
 	trips t
 	
@@ -21,6 +21,6 @@ ON
 
 GROUP BY
 	t.start_date,
-	t.trip_id,
-	t.duration
-ORDER BY start_date DESC;
+	t.trip_id
+	
+ORDER BY longest DESC;
